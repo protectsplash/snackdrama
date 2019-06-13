@@ -1,5 +1,5 @@
 <template>
-    <v-layout :class="$vuetify.breakpoint.sm || $vuetify.breakpoint.xs ? 'lay-1-1':'lay-1'" pt-3 row wrap>
+    <v-layout :class="$vuetify.breakpoint.sm || $vuetify.breakpoint.xs ? 'lay-1-1 pt-3':'lay-1 pt-5'" row wrap>
         <v-flex xs12>
         <div class="black--text title pb-4 mb-3">
             <span class="M2-text-1">로맨스</span>&nbsp;<span class="M2-text-2">시리즈</span>
@@ -147,7 +147,7 @@ export default {
 }
 .lay-1{
     padding-left: 93px;
-    padding-top: 42px;
+    padding-top: 30px;
 }
 .lay-1-1{
     padding-top: 0px;
