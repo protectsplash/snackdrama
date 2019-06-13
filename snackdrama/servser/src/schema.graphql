@@ -1,0 +1,52 @@
+# import Drama from "./generated/prisma.graphql"
+# import thank from "./generated/prisma.graphql"
+
+type Query {
+  Drama(id: ID!): Drama!
+  Dramas: [Drama!]!
+  thank(id: ID!): thank!
+  thanks: [thank!]!
+  me: User
+}
+
+type Mutation {
+  signup(email: String!, password: String!, name: String!): AuthPayload!
+  login(email: String!, password: String!): AuthPayload!
+
+  createDrama(
+    title: String!,
+    text: String!,
+    gooddrama: Boolean! @default(value: false),
+    poster: String!,
+    day: String!,
+    about: String!,
+    youtube: String!,
+    fulllink: String!,
+    studio: String!,
+    name: String!,
+    link: String!,
+    cut: String!,
+    type: String! ): Drama!
+
+  createthank(
+     webname: String!,
+     weburl: String!,
+     webemail: String!
+  ): thank!
+}
+
+# type Subscription {
+#   feedSubscription: PostSubscriptionPayload!
+# }
+
+type AuthPayload {
+  token: String!
+  user: User!
+}
+
+type User {
+  id: ID!
+  email: String!
+  name: String!
+  like: [Drama!]!
+}

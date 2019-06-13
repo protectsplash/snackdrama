@@ -1,0 +1,998 @@
+type AggregateDrama {
+  count: Int!
+}
+
+type Aggregatethank {
+  count: Int!
+}
+
+type AggregateUser {
+  count: Int!
+}
+
+type BatchPayload {
+  count: Long!
+}
+
+scalar DateTime
+
+type Drama {
+  id: ID!
+  createdAt: DateTime!
+  updatedAt: DateTime!
+  gooddrama: Boolean!
+  poster: String!
+  title: String!
+  text: String!
+  day: String!
+  about: String!
+  youtube: String!
+  fulllink: String!
+  studio: String!
+  name: String!
+  link: String!
+  type: String!
+  cut: String!
+}
+
+type DramaConnection {
+  pageInfo: PageInfo!
+  edges: [DramaEdge]!
+  aggregate: AggregateDrama!
+}
+
+input DramaCreateInput {
+  gooddrama: Boolean
+  poster: String!
+  title: String!
+  text: String!
+  day: String!
+  about: String!
+  youtube: String!
+  fulllink: String!
+  studio: String!
+  name: String!
+  link: String!
+  type: String!
+  cut: String!
+}
+
+input DramaCreateManyInput {
+  create: [DramaCreateInput!]
+  connect: [DramaWhereUniqueInput!]
+}
+
+type DramaEdge {
+  node: Drama!
+  cursor: String!
+}
+
+enum DramaOrderByInput {
+  id_ASC
+  id_DESC
+  createdAt_ASC
+  createdAt_DESC
+  updatedAt_ASC
+  updatedAt_DESC
+  gooddrama_ASC
+  gooddrama_DESC
+  poster_ASC
+  poster_DESC
+  title_ASC
+  title_DESC
+  text_ASC
+  text_DESC
+  day_ASC
+  day_DESC
+  about_ASC
+  about_DESC
+  youtube_ASC
+  youtube_DESC
+  fulllink_ASC
+  fulllink_DESC
+  studio_ASC
+  studio_DESC
+  name_ASC
+  name_DESC
+  link_ASC
+  link_DESC
+  type_ASC
+  type_DESC
+  cut_ASC
+  cut_DESC
+}
+
+type DramaPreviousValues {
+  id: ID!
+  createdAt: DateTime!
+  updatedAt: DateTime!
+  gooddrama: Boolean!
+  poster: String!
+  title: String!
+  text: String!
+  day: String!
+  about: String!
+  youtube: String!
+  fulllink: String!
+  studio: String!
+  name: String!
+  link: String!
+  type: String!
+  cut: String!
+}
+
+input DramaScalarWhereInput {
+  id: ID
+  id_not: ID
+  id_in: [ID!]
+  id_not_in: [ID!]
+  id_lt: ID
+  id_lte: ID
+  id_gt: ID
+  id_gte: ID
+  id_contains: ID
+  id_not_contains: ID
+  id_starts_with: ID
+  id_not_starts_with: ID
+  id_ends_with: ID
+  id_not_ends_with: ID
+  createdAt: DateTime
+  createdAt_not: DateTime
+  createdAt_in: [DateTime!]
+  createdAt_not_in: [DateTime!]
+  createdAt_lt: DateTime
+  createdAt_lte: DateTime
+  createdAt_gt: DateTime
+  createdAt_gte: DateTime
+  updatedAt: DateTime
+  updatedAt_not: DateTime
+  updatedAt_in: [DateTime!]
+  updatedAt_not_in: [DateTime!]
+  updatedAt_lt: DateTime
+  updatedAt_lte: DateTime
+  updatedAt_gt: DateTime
+  updatedAt_gte: DateTime
+  gooddrama: Boolean
+  gooddrama_not: Boolean
+  poster: String
+  poster_not: String
+  poster_in: [String!]
+  poster_not_in: [String!]
+  poster_lt: String
+  poster_lte: String
+  poster_gt: String
+  poster_gte: String
+  poster_contains: String
+  poster_not_contains: String
+  poster_starts_with: String
+  poster_not_starts_with: String
+  poster_ends_with: String
+  poster_not_ends_with: String
+  title: String
+  title_not: String
+  title_in: [String!]
+  title_not_in: [String!]
+  title_lt: String
+  title_lte: String
+  title_gt: String
+  title_gte: String
+  title_contains: String
+  title_not_contains: String
+  title_starts_with: String
+  title_not_starts_with: String
+  title_ends_with: String
+  title_not_ends_with: String
+  text: String
+  text_not: String
+  text_in: [String!]
+  text_not_in: [String!]
+  text_lt: String
+  text_lte: String
+  text_gt: String
+  text_gte: String
+  text_contains: String
+  text_not_contains: String
+  text_starts_with: String
+  text_not_starts_with: String
+  text_ends_with: String
+  text_not_ends_with: String
+  day: String
+  day_not: String
+  day_in: [String!]
+  day_not_in: [String!]
+  day_lt: String
+  day_lte: String
+  day_gt: String
+  day_gte: String
+  day_contains: String
+  day_not_contains: String
+  day_starts_with: String
+  day_not_starts_with: String
+  day_ends_with: String
+  day_not_ends_with: String
+  about: String
+  about_not: String
+  about_in: [String!]
+  about_not_in: [String!]
+  about_lt: String
+  about_lte: String
+  about_gt: String
+  about_gte: String
+  about_contains: String
+  about_not_contains: String
+  about_starts_with: String
+  about_not_starts_with: String
+  about_ends_with: String
+  about_not_ends_with: String
+  youtube: String
+  youtube_not: String
+  youtube_in: [String!]
+  youtube_not_in: [String!]
+  youtube_lt: String
+  youtube_lte: String
+  youtube_gt: String
+  youtube_gte: String
+  youtube_contains: String
+  youtube_not_contains: String
+  youtube_starts_with: String
+  youtube_not_starts_with: String
+  youtube_ends_with: String
+  youtube_not_ends_with: String
+  fulllink: String
+  fulllink_not: String
+  fulllink_in: [String!]
+  fulllink_not_in: [String!]
+  fulllink_lt: String
+  fulllink_lte: String
+  fulllink_gt: String
+  fulllink_gte: String
+  fulllink_contains: String
+  fulllink_not_contains: String
+  fulllink_starts_with: String
+  fulllink_not_starts_with: String
+  fulllink_ends_with: String
+  fulllink_not_ends_with: String
+  studio: String
+  studio_not: String
+  studio_in: [String!]
+  studio_not_in: [String!]
+  studio_lt: String
+  studio_lte: String
+  studio_gt: String
+  studio_gte: String
+  studio_contains: String
+  studio_not_contains: String
+  studio_starts_with: String
+  studio_not_starts_with: String
+  studio_ends_with: String
+  studio_not_ends_with: String
+  name: String
+  name_not: String
+  name_in: [String!]
+  name_not_in: [String!]
+  name_lt: String
+  name_lte: String
+  name_gt: String
+  name_gte: String
+  name_contains: String
+  name_not_contains: String
+  name_starts_with: String
+  name_not_starts_with: String
+  name_ends_with: String
+  name_not_ends_with: String
+  link: String
+  link_not: String
+  link_in: [String!]
+  link_not_in: [String!]
+  link_lt: String
+  link_lte: String
+  link_gt: String
+  link_gte: String
+  link_contains: String
+  link_not_contains: String
+  link_starts_with: String
+  link_not_starts_with: String
+  link_ends_with: String
+  link_not_ends_with: String
+  type: String
+  type_not: String
+  type_in: [String!]
+  type_not_in: [String!]
+  type_lt: String
+  type_lte: String
+  type_gt: String
+  type_gte: String
+  type_contains: String
+  type_not_contains: String
+  type_starts_with: String
+  type_not_starts_with: String
+  type_ends_with: String
+  type_not_ends_with: String
+  cut: String
+  cut_not: String
+  cut_in: [String!]
+  cut_not_in: [String!]
+  cut_lt: String
+  cut_lte: String
+  cut_gt: String
+  cut_gte: String
+  cut_contains: String
+  cut_not_contains: String
+  cut_starts_with: String
+  cut_not_starts_with: String
+  cut_ends_with: String
+  cut_not_ends_with: String
+  AND: [DramaScalarWhereInput!]
+  OR: [DramaScalarWhereInput!]
+  NOT: [DramaScalarWhereInput!]
+}
+
+type DramaSubscriptionPayload {
+  mutation: MutationType!
+  node: Drama
+  updatedFields: [String!]
+  previousValues: DramaPreviousValues
+}
+
+input DramaSubscriptionWhereInput {
+  mutation_in: [MutationType!]
+  updatedFields_contains: String
+  updatedFields_contains_every: [String!]
+  updatedFields_contains_some: [String!]
+  node: DramaWhereInput
+  AND: [DramaSubscriptionWhereInput!]
+  OR: [DramaSubscriptionWhereInput!]
+  NOT: [DramaSubscriptionWhereInput!]
+}
+
+input DramaUpdateDataInput {
+  gooddrama: Boolean
+  poster: String
+  title: String
+  text: String
+  day: String
+  about: String
+  youtube: String
+  fulllink: String
+  studio: String
+  name: String
+  link: String
+  type: String
+  cut: String
+}
+
+input DramaUpdateInput {
+  gooddrama: Boolean
+  poster: String
+  title: String
+  text: String
+  day: String
+  about: String
+  youtube: String
+  fulllink: String
+  studio: String
+  name: String
+  link: String
+  type: String
+  cut: String
+}
+
+input DramaUpdateManyDataInput {
+  gooddrama: Boolean
+  poster: String
+  title: String
+  text: String
+  day: String
+  about: String
+  youtube: String
+  fulllink: String
+  studio: String
+  name: String
+  link: String
+  type: String
+  cut: String
+}
+
+input DramaUpdateManyInput {
+  create: [DramaCreateInput!]
+  update: [DramaUpdateWithWhereUniqueNestedInput!]
+  upsert: [DramaUpsertWithWhereUniqueNestedInput!]
+  delete: [DramaWhereUniqueInput!]
+  connect: [DramaWhereUniqueInput!]
+  set: [DramaWhereUniqueInput!]
+  disconnect: [DramaWhereUniqueInput!]
+  deleteMany: [DramaScalarWhereInput!]
+  updateMany: [DramaUpdateManyWithWhereNestedInput!]
+}
+
+input DramaUpdateManyMutationInput {
+  gooddrama: Boolean
+  poster: String
+  title: String
+  text: String
+  day: String
+  about: String
+  youtube: String
+  fulllink: String
+  studio: String
+  name: String
+  link: String
+  type: String
+  cut: String
+}
+
+input DramaUpdateManyWithWhereNestedInput {
+  where: DramaScalarWhereInput!
+  data: DramaUpdateManyDataInput!
+}
+
+input DramaUpdateWithWhereUniqueNestedInput {
+  where: DramaWhereUniqueInput!
+  data: DramaUpdateDataInput!
+}
+
+input DramaUpsertWithWhereUniqueNestedInput {
+  where: DramaWhereUniqueInput!
+  update: DramaUpdateDataInput!
+  create: DramaCreateInput!
+}
+
+input DramaWhereInput {
+  id: ID
+  id_not: ID
+  id_in: [ID!]
+  id_not_in: [ID!]
+  id_lt: ID
+  id_lte: ID
+  id_gt: ID
+  id_gte: ID
+  id_contains: ID
+  id_not_contains: ID
+  id_starts_with: ID
+  id_not_starts_with: ID
+  id_ends_with: ID
+  id_not_ends_with: ID
+  createdAt: DateTime
+  createdAt_not: DateTime
+  createdAt_in: [DateTime!]
+  createdAt_not_in: [DateTime!]
+  createdAt_lt: DateTime
+  createdAt_lte: DateTime
+  createdAt_gt: DateTime
+  createdAt_gte: DateTime
+  updatedAt: DateTime
+  updatedAt_not: DateTime
+  updatedAt_in: [DateTime!]
+  updatedAt_not_in: [DateTime!]
+  updatedAt_lt: DateTime
+  updatedAt_lte: DateTime
+  updatedAt_gt: DateTime
+  updatedAt_gte: DateTime
+  gooddrama: Boolean
+  gooddrama_not: Boolean
+  poster: String
+  poster_not: String
+  poster_in: [String!]
+  poster_not_in: [String!]
+  poster_lt: String
+  poster_lte: String
+  poster_gt: String
+  poster_gte: String
+  poster_contains: String
+  poster_not_contains: String
+  poster_starts_with: String
+  poster_not_starts_with: String
+  poster_ends_with: String
+  poster_not_ends_with: String
+  title: String
+  title_not: String
+  title_in: [String!]
+  title_not_in: [String!]
+  title_lt: String
+  title_lte: String
+  title_gt: String
+  title_gte: String
+  title_contains: String
+  title_not_contains: String
+  title_starts_with: String
+  title_not_starts_with: String
+  title_ends_with: String
+  title_not_ends_with: String
+  text: String
+  text_not: String
+  text_in: [String!]
+  text_not_in: [String!]
+  text_lt: String
+  text_lte: String
+  text_gt: String
+  text_gte: String
+  text_contains: String
+  text_not_contains: String
+  text_starts_with: String
+  text_not_starts_with: String
+  text_ends_with: String
+  text_not_ends_with: String
+  day: String
+  day_not: String
+  day_in: [String!]
+  day_not_in: [String!]
+  day_lt: String
+  day_lte: String
+  day_gt: String
+  day_gte: String
+  day_contains: String
+  day_not_contains: String
+  day_starts_with: String
+  day_not_starts_with: String
+  day_ends_with: String
+  day_not_ends_with: String
+  about: String
+  about_not: String
+  about_in: [String!]
+  about_not_in: [String!]
+  about_lt: String
+  about_lte: String
+  about_gt: String
+  about_gte: String
+  about_contains: String
+  about_not_contains: String
+  about_starts_with: String
+  about_not_starts_with: String
+  about_ends_with: String
+  about_not_ends_with: String
+  youtube: String
+  youtube_not: String
+  youtube_in: [String!]
+  youtube_not_in: [String!]
+  youtube_lt: String
+  youtube_lte: String
+  youtube_gt: String
+  youtube_gte: String
+  youtube_contains: String
+  youtube_not_contains: String
+  youtube_starts_with: String
+  youtube_not_starts_with: String
+  youtube_ends_with: String
+  youtube_not_ends_with: String
+  fulllink: String
+  fulllink_not: String
+  fulllink_in: [String!]
+  fulllink_not_in: [String!]
+  fulllink_lt: String
+  fulllink_lte: String
+  fulllink_gt: String
+  fulllink_gte: String
+  fulllink_contains: String
+  fulllink_not_contains: String
+  fulllink_starts_with: String
+  fulllink_not_starts_with: String
+  fulllink_ends_with: String
+  fulllink_not_ends_with: String
+  studio: String
+  studio_not: String
+  studio_in: [String!]
+  studio_not_in: [String!]
+  studio_lt: String
+  studio_lte: String
+  studio_gt: String
+  studio_gte: String
+  studio_contains: String
+  studio_not_contains: String
+  studio_starts_with: String
+  studio_not_starts_with: String
+  studio_ends_with: String
+  studio_not_ends_with: String
+  name: String
+  name_not: String
+  name_in: [String!]
+  name_not_in: [String!]
+  name_lt: String
+  name_lte: String
+  name_gt: String
+  name_gte: String
+  name_contains: String
+  name_not_contains: String
+  name_starts_with: String
+  name_not_starts_with: String
+  name_ends_with: String
+  name_not_ends_with: String
+  link: String
+  link_not: String
+  link_in: [String!]
+  link_not_in: [String!]
+  link_lt: String
+  link_lte: String
+  link_gt: String
+  link_gte: String
+  link_contains: String
+  link_not_contains: String
+  link_starts_with: String
+  link_not_starts_with: String
+  link_ends_with: String
+  link_not_ends_with: String
+  type: String
+  type_not: String
+  type_in: [String!]
+  type_not_in: [String!]
+  type_lt: String
+  type_lte: String
+  type_gt: String
+  type_gte: String
+  type_contains: String
+  type_not_contains: String
+  type_starts_with: String
+  type_not_starts_with: String
+  type_ends_with: String
+  type_not_ends_with: String
+  cut: String
+  cut_not: String
+  cut_in: [String!]
+  cut_not_in: [String!]
+  cut_lt: String
+  cut_lte: String
+  cut_gt: String
+  cut_gte: String
+  cut_contains: String
+  cut_not_contains: String
+  cut_starts_with: String
+  cut_not_starts_with: String
+  cut_ends_with: String
+  cut_not_ends_with: String
+  AND: [DramaWhereInput!]
+  OR: [DramaWhereInput!]
+  NOT: [DramaWhereInput!]
+}
+
+input DramaWhereUniqueInput {
+  id: ID
+}
+
+scalar Long
+
+type Mutation {
+  createDrama(data: DramaCreateInput!): Drama!
+  updateDrama(data: DramaUpdateInput!, where: DramaWhereUniqueInput!): Drama
+  updateManyDramas(data: DramaUpdateManyMutationInput!, where: DramaWhereInput): BatchPayload!
+  upsertDrama(where: DramaWhereUniqueInput!, create: DramaCreateInput!, update: DramaUpdateInput!): Drama!
+  deleteDrama(where: DramaWhereUniqueInput!): Drama
+  deleteManyDramas(where: DramaWhereInput): BatchPayload!
+  createUser(data: UserCreateInput!): User!
+  updateUser(data: UserUpdateInput!, where: UserWhereUniqueInput!): User
+  updateManyUsers(data: UserUpdateManyMutationInput!, where: UserWhereInput): BatchPayload!
+  upsertUser(where: UserWhereUniqueInput!, create: UserCreateInput!, update: UserUpdateInput!): User!
+  deleteUser(where: UserWhereUniqueInput!): User
+  deleteManyUsers(where: UserWhereInput): BatchPayload!
+  createthank(data: thankCreateInput!): thank!
+  updatethank(data: thankUpdateInput!, where: thankWhereUniqueInput!): thank
+  updateManythanks(data: thankUpdateManyMutationInput!, where: thankWhereInput): BatchPayload!
+  upsertthank(where: thankWhereUniqueInput!, create: thankCreateInput!, update: thankUpdateInput!): thank!
+  deletethank(where: thankWhereUniqueInput!): thank
+  deleteManythanks(where: thankWhereInput): BatchPayload!
+}
+
+enum MutationType {
+  CREATED
+  UPDATED
+  DELETED
+}
+
+interface Node {
+  id: ID!
+}
+
+type PageInfo {
+  hasNextPage: Boolean!
+  hasPreviousPage: Boolean!
+  startCursor: String
+  endCursor: String
+}
+
+type Query {
+  drama(where: DramaWhereUniqueInput!): Drama
+  dramas(where: DramaWhereInput, orderBy: DramaOrderByInput, skip: Int, after: String, before: String, first: Int, last: Int): [Drama]!
+  dramasConnection(where: DramaWhereInput, orderBy: DramaOrderByInput, skip: Int, after: String, before: String, first: Int, last: Int): DramaConnection!
+  user(where: UserWhereUniqueInput!): User
+  users(where: UserWhereInput, orderBy: UserOrderByInput, skip: Int, after: String, before: String, first: Int, last: Int): [User]!
+  usersConnection(where: UserWhereInput, orderBy: UserOrderByInput, skip: Int, after: String, before: String, first: Int, last: Int): UserConnection!
+  thank(where: thankWhereUniqueInput!): thank
+  thanks(where: thankWhereInput, orderBy: thankOrderByInput, skip: Int, after: String, before: String, first: Int, last: Int): [thank]!
+  thanksConnection(where: thankWhereInput, orderBy: thankOrderByInput, skip: Int, after: String, before: String, first: Int, last: Int): thankConnection!
+  node(id: ID!): Node
+}
+
+type Subscription {
+  drama(where: DramaSubscriptionWhereInput): DramaSubscriptionPayload
+  user(where: UserSubscriptionWhereInput): UserSubscriptionPayload
+  thank(where: thankSubscriptionWhereInput): thankSubscriptionPayload
+}
+
+type thank {
+  id: ID!
+  webname: String!
+  weburl: String!
+  webemail: String!
+}
+
+type thankConnection {
+  pageInfo: PageInfo!
+  edges: [thankEdge]!
+  aggregate: Aggregatethank!
+}
+
+input thankCreateInput {
+  webname: String!
+  weburl: String!
+  webemail: String!
+}
+
+type thankEdge {
+  node: thank!
+  cursor: String!
+}
+
+enum thankOrderByInput {
+  id_ASC
+  id_DESC
+  webname_ASC
+  webname_DESC
+  weburl_ASC
+  weburl_DESC
+  webemail_ASC
+  webemail_DESC
+  createdAt_ASC
+  createdAt_DESC
+  updatedAt_ASC
+  updatedAt_DESC
+}
+
+type thankPreviousValues {
+  id: ID!
+  webname: String!
+  weburl: String!
+  webemail: String!
+}
+
+type thankSubscriptionPayload {
+  mutation: MutationType!
+  node: thank
+  updatedFields: [String!]
+  previousValues: thankPreviousValues
+}
+
+input thankSubscriptionWhereInput {
+  mutation_in: [MutationType!]
+  updatedFields_contains: String
+  updatedFields_contains_every: [String!]
+  updatedFields_contains_some: [String!]
+  node: thankWhereInput
+  AND: [thankSubscriptionWhereInput!]
+  OR: [thankSubscriptionWhereInput!]
+  NOT: [thankSubscriptionWhereInput!]
+}
+
+input thankUpdateInput {
+  webname: String
+  weburl: String
+  webemail: String
+}
+
+input thankUpdateManyMutationInput {
+  webname: String
+  weburl: String
+  webemail: String
+}
+
+input thankWhereInput {
+  id: ID
+  id_not: ID
+  id_in: [ID!]
+  id_not_in: [ID!]
+  id_lt: ID
+  id_lte: ID
+  id_gt: ID
+  id_gte: ID
+  id_contains: ID
+  id_not_contains: ID
+  id_starts_with: ID
+  id_not_starts_with: ID
+  id_ends_with: ID
+  id_not_ends_with: ID
+  webname: String
+  webname_not: String
+  webname_in: [String!]
+  webname_not_in: [String!]
+  webname_lt: String
+  webname_lte: String
+  webname_gt: String
+  webname_gte: String
+  webname_contains: String
+  webname_not_contains: String
+  webname_starts_with: String
+  webname_not_starts_with: String
+  webname_ends_with: String
+  webname_not_ends_with: String
+  weburl: String
+  weburl_not: String
+  weburl_in: [String!]
+  weburl_not_in: [String!]
+  weburl_lt: String
+  weburl_lte: String
+  weburl_gt: String
+  weburl_gte: String
+  weburl_contains: String
+  weburl_not_contains: String
+  weburl_starts_with: String
+  weburl_not_starts_with: String
+  weburl_ends_with: String
+  weburl_not_ends_with: String
+  webemail: String
+  webemail_not: String
+  webemail_in: [String!]
+  webemail_not_in: [String!]
+  webemail_lt: String
+  webemail_lte: String
+  webemail_gt: String
+  webemail_gte: String
+  webemail_contains: String
+  webemail_not_contains: String
+  webemail_starts_with: String
+  webemail_not_starts_with: String
+  webemail_ends_with: String
+  webemail_not_ends_with: String
+  AND: [thankWhereInput!]
+  OR: [thankWhereInput!]
+  NOT: [thankWhereInput!]
+}
+
+input thankWhereUniqueInput {
+  id: ID
+}
+
+type User {
+  id: ID!
+  email: String!
+  password: String!
+  name: String!
+  like(where: DramaWhereInput, orderBy: DramaOrderByInput, skip: Int, after: String, before: String, first: Int, last: Int): [Drama!]
+}
+
+type UserConnection {
+  pageInfo: PageInfo!
+  edges: [UserEdge]!
+  aggregate: AggregateUser!
+}
+
+input UserCreateInput {
+  email: String!
+  password: String!
+  name: String!
+  like: DramaCreateManyInput
+}
+
+type UserEdge {
+  node: User!
+  cursor: String!
+}
+
+enum UserOrderByInput {
+  id_ASC
+  id_DESC
+  email_ASC
+  email_DESC
+  password_ASC
+  password_DESC
+  name_ASC
+  name_DESC
+  createdAt_ASC
+  createdAt_DESC
+  updatedAt_ASC
+  updatedAt_DESC
+}
+
+type UserPreviousValues {
+  id: ID!
+  email: String!
+  password: String!
+  name: String!
+}
+
+type UserSubscriptionPayload {
+  mutation: MutationType!
+  node: User
+  updatedFields: [String!]
+  previousValues: UserPreviousValues
+}
+
+input UserSubscriptionWhereInput {
+  mutation_in: [MutationType!]
+  updatedFields_contains: String
+  updatedFields_contains_every: [String!]
+  updatedFields_contains_some: [String!]
+  node: UserWhereInput
+  AND: [UserSubscriptionWhereInput!]
+  OR: [UserSubscriptionWhereInput!]
+  NOT: [UserSubscriptionWhereInput!]
+}
+
+input UserUpdateInput {
+  email: String
+  password: String
+  name: String
+  like: DramaUpdateManyInput
+}
+
+input UserUpdateManyMutationInput {
+  email: String
+  password: String
+  name: String
+}
+
+input UserWhereInput {
+  id: ID
+  id_not: ID
+  id_in: [ID!]
+  id_not_in: [ID!]
+  id_lt: ID
+  id_lte: ID
+  id_gt: ID
+  id_gte: ID
+  id_contains: ID
+  id_not_contains: ID
+  id_starts_with: ID
+  id_not_starts_with: ID
+  id_ends_with: ID
+  id_not_ends_with: ID
+  email: String
+  email_not: String
+  email_in: [String!]
+  email_not_in: [String!]
+  email_lt: String
+  email_lte: String
+  email_gt: String
+  email_gte: String
+  email_contains: String
+  email_not_contains: String
+  email_starts_with: String
+  email_not_starts_with: String
+  email_ends_with: String
+  email_not_ends_with: String
+  password: String
+  password_not: String
+  password_in: [String!]
+  password_not_in: [String!]
+  password_lt: String
+  password_lte: String
+  password_gt: String
+  password_gte: String
+  password_contains: String
+  password_not_contains: String
+  password_starts_with: String
+  password_not_starts_with: String
+  password_ends_with: String
+  password_not_ends_with: String
+  name: String
+  name_not: String
+  name_in: [String!]
+  name_not_in: [String!]
+  name_lt: String
+  name_lte: String
+  name_gt: String
+  name_gte: String
+  name_contains: String
+  name_not_contains: String
+  name_starts_with: String
+  name_not_starts_with: String
+  name_ends_with: String
+  name_not_ends_with: String
+  like_every: DramaWhereInput
+  like_some: DramaWhereInput
+  like_none: DramaWhereInput
+  AND: [UserWhereInput!]
+  OR: [UserWhereInput!]
+  NOT: [UserWhereInput!]
+}
+
+input UserWhereUniqueInput {
+  id: ID
+  email: String
+}
