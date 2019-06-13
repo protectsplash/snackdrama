@@ -32,7 +32,7 @@
             </router-link>
         </v-flex>
         <v-flex xs12>
-        <div class="black--text title pb-4 mb-3">
+        <div class="black--text title pb-4 mb-3 pt-5">
             <span class="M2-text-1">코미디</span>&nbsp;<span class="M2-text-2">시리즈</span>
         </div>
         </v-flex>
@@ -63,7 +63,7 @@
             </router-link>
         </v-flex>
         <v-flex xs12>
-        <div class="black--text title pb-4 mb-3">
+        <div class="black--text title pb-4 mb-3 pt-5">
             <span class="M2-text-1">스릴러</span>&nbsp;<span class="M2-text-2">시리즈</span>
         </div>
         </v-flex>
