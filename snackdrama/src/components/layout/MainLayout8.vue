@@ -2,7 +2,7 @@
     <v-layout :class="$vuetify.breakpoint.sm || $vuetify.breakpoint.xs ? 'lay-1-1':'lay-1'" row wrap>
         <v-flex v-for="C2 in dramas" :key="C2.title" xl3 lg4 sm6 xs12>
             <router-link :to="`/snack/${C2.id}`" class="router-link1">
-           <v-card flat width="70%" class="ma-3">
+           <v-card flat :width="$vuetify.breakpoint.xs?'90%':'80%'" class="ma-3">
                     <v-img
                     :src="C2.cut" width="100%" height="250"></v-img>
                     <div class="C-title1">
@@ -17,7 +17,7 @@
                         <v-img class="C-icon1"
                         :src="C2.studio" width="28" height="28"></v-img>
                         </div>
-                        <span class="subheading C-studio1 pl-3">{{C2.name}}</span>
+                        <span class="subheading C-studio1 pl-3 py-2">{{C2.name}}</span>
                         <v-spacer></v-spacer>
                         <div class="pr-2" v-show="C2.gooddrama===true">
                         <v-chip color="red" text-color="white">선정작</v-chip>

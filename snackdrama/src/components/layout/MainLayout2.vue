@@ -7,7 +7,7 @@
         </v-flex>
         <v-flex v-for="C in dramas" :key="C.index" xl3 lg4 sm6 xs12 v-show="C.type==='로맨스'">
             <router-link :to="`/snack/${C.id}`" class="router-link1">
-            <v-card flat width="70%" class="ma-3">
+            <v-card flat :width="$vuetify.breakpoint.xs?'90%':'80%'" class="ma-3">
                     <v-img
                     :src="C.cut" width="100%" height="250"></v-img>
                     <div class="C-title1">
@@ -38,7 +38,7 @@
         </v-flex>
         <v-flex v-for="C1 in dramas" :key="C1.index" xl3 lg4 sm6 xs12 v-show="C1.type==='코미디'">
             <router-link :to="`/snack/${C1.id}`" class="router-link1">
-            <v-card flat width="70%" class="ma-3">
+            <v-card flat :width="$vuetify.breakpoint.xs?'90%':'80%'" class="ma-3">
                     <v-img
                     :src="C1.cut" width="100%" height="250"></v-img>
                     <div class="C-title1">
@@ -69,7 +69,7 @@
         </v-flex>
         <v-flex v-for="C2 in dramas" :key="C2.index" xl3 lg4 sm6 xs12 v-show="C2.type==='스릴러'">
             <router-link :to="`/snack/${C2.id}`" class="router-link1">
-            <v-card flat width="70%" class="ma-3">
+            <v-card flat :width="$vuetify.breakpoint.xs?'90%':'80%'" class="ma-3">
                     <v-img
                     :src="C2.cut" width="100%" height="250"></v-img>
                     <div class="C-title1">

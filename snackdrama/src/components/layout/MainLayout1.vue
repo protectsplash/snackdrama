@@ -114,7 +114,7 @@ export default {
 }
 .text-position3-1{
     top: 500px;
-    left: 93px;
+    left: 15px;
     position: absolute;
 }
 .main-T1{

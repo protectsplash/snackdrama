@@ -102,11 +102,12 @@
             <v-icon color="black">filter_list</v-icon>
         </div>
             <v-divider
+            v-show="!$vuetify.breakpoint.xs"
             class="mx-3"
             inset
             vertical
           ></v-divider>
-          <div>
+          <div v-show="!$vuetify.breakpoint.xs">
               <strong>Filter</strong>
           </div>
           <v-divider
@@ -114,17 +115,17 @@
             inset
             vertical
           ></v-divider>
-          <v-btn flat large to="/snackdrama/lomance" class="font-weight-light">Lomance</v-btn>
+          <v-btn flat :large="!$vuetify.breakpoint.xs" :small="$vuetify.breakpoint.xs" to="/snackdrama/lomance" class="font-weight-light">Lomance</v-btn>
           <v-divider
             inset
             vertical
           ></v-divider>
-          <v-btn flat large to="/snackdrama/comedy" class="font-weight-light">comedy</v-btn>
+          <v-btn flat :large="!$vuetify.breakpoint.xs" :small="$vuetify.breakpoint.xs" to="/snackdrama/comedy" class="font-weight-light">comedy</v-btn>
           <v-divider
             inset
             vertical
           ></v-divider>
-          <v-btn flat large to="/snackdrama/thriller" class="font-weight-light">thriller</v-btn>
+          <v-btn flat :large="!$vuetify.breakpoint.xs" :small="$vuetify.breakpoint.xs" to="/snackdrama/thriller" class="font-weight-light">thriller</v-btn>
           <v-divider
             inset
             vertical

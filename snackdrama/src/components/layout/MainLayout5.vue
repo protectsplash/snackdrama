@@ -2,7 +2,7 @@
     <v-layout :class="$vuetify.breakpoint.sm || $vuetify.breakpoint.xs ? 'lay-1-1':'lay-1'" row wrap>
         <v-flex v-for="C in dramas" :key="C.title" xl3 lg4 sm6 xs12>
            <router-link :to="`/snack/${C.id}`" class="router-link1">
-            <v-card flat width="70%" class="ma-3">
+            <v-card flat :width="$vuetify.breakpoint.xs?'90%':'80%'" class="ma-3">
                     <v-img
                     :src="C.cut" width="100%" height="250"></v-img>
                     <div class="C-title1">
@@ -17,7 +17,7 @@
                         <v-img class="C-icon1"
                         :src="C.studio" width="28" height="28"></v-img>
                         </div>
-                        <span class="subheading C-studio1 pl-3">{{C.name}}</span>
+                        <span class="subheading C-studio1 pl-3 py-2">{{C.name}}</span>
                         <v-spacer></v-spacer>
                         <div class="pr-2" v-show="C.gooddrama===true">
                         <v-chip color="red" text-color="white">선정작</v-chip>
@@ -27,7 +27,7 @@
             </router-link>
         </v-flex>
         <!-- <v-flex v-for="C1 in cards1" :key="C1.title" xl3 lg4 sm6 xs12>
-            <v-card flat width="70%" class="ma-3">
+            <v-card flat :width="$vuetify.breakpoint.xs?'90%':'80%'" class="ma-3">
                     <v-img
                     :position="C1.imgpos"
                     :src="C1.img" width="100%" height="250"></v-img>
@@ -52,10 +52,10 @@
             </v-card>
         </v-flex>
         <v-flex v-for="C2 in cards2" :key="C2.title" xl3 lg4 sm6 xs12>
-            <v-card flat width="70%" class="ma-3">
+            <v-card flat :width="$vuetify.breakpoint.xs?'90%':'80%'" class="ma-3">
                     <v-img
                     :position="C2.imgpos"
-                    :src="C2.img" width="70%" height="250"></v-img>
+                    :src="C2.img" width="80%" height="250"></v-img>
                     <div class="C-title1">
                         {{C2.title}}
                     </div>
