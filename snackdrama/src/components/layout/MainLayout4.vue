@@ -167,9 +167,10 @@
         </v-flex> -->
         <!-- 라이브리 시티 설치 코드 -->
         <v-flex lg8 sm9 xs11>
-            <div id="two">
-        <div id="lv-container" data-id="city" data-uid="MTAyMC80NDI3Ni8yMDgwOA==">
-        </div>
+             <div class="comments" id="two">
+                <vue-livere uid="MTAyMC80NDI3Ni8yMDgwOA==">
+                    <!-- refer="PAGE_URL_OR_SOME_UNIQUE_VALUE" -->
+                </vue-livere>
             </div>
         </v-flex>
         <card1 id="three"/>
@@ -177,26 +178,17 @@
     </v-layout>
 </template>
 <script>
-/* eslint-disable */ 
-(function (d, s) {
-          var j, e = d.getElementsByTagName(s)[0];
-
-          if (typeof LivereTower === 'function') { return; }
-
-          j = d.createElement(s);
-          j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
-          j.async = true;
-
-          e.parentNode.insertBefore(j, e);
-        })(document, 'script');
+/* eslint-disable */
 import {  Drama_detail_QUERY } from '../../graphql/queries'
 import footer1 from '../footer/footer1.vue'
 import card1 from '../card/card1.vue'
 import * as easings from 'vuetify/es5/util/easing-patterns'
+ import VueLivere from 'vue-livere/VueLivere'
 export default {
     components:{
         footer1,
-        card1
+        card1,
+        VueLivere
     },
     data() {
         return {
@@ -247,7 +239,18 @@ export default {
           offset: this.offset,
           easing: this.easing
         }
-    }
+    },
+        livere(d, s) {
+                   var j, e = d.getElementsByTagName(s)[0];
+
+                   if (typeof LivereTower === 'function') { return; }
+
+                   j = d.createElement(s);
+                   j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+                   j.async = true;
+
+                   e.parentNode.insertBefore(j, e);
+               }
     },
     apollo: {
       drama: {

@@ -2,9 +2,9 @@
     <v-layout :class="$vuetify.breakpoint.sm || $vuetify.breakpoint.xs ? 'lay-1-1':'lay-1'" row wrap>
         <v-flex v-for="C in dramas" :key="C.title" xl3 lg4 sm6 xs12>
             <router-link :to="`/snack/${C.id}`" class="router-link1">
-            <v-card flat width="360" class="ma-3">
+            <v-card flat width="70%" class="ma-3">
                     <v-img
-                    :src="C.cut" width="360" height="250"></v-img>
+                    :src="C.cut" width="100%" height="250"></v-img>
                     <div class="C-title1">
                         {{C.title}}
                     </div>
